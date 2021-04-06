@@ -5,12 +5,15 @@
   <title>Map Coordinates</title>
   <script>
 	window.onload = init;
+
 	function init() {
 		var map = document.getElementById("map");
 		map.onmousemove = showCoords;
 		var mydiv = document.getElementById("mydiv");
 		mydiv.onclick = addtext;
-	}
+        addListbtn.onclick = addList;
+
+    }
 	
 	function showCoords(eventObj) {
 		var coords = document.getElementById("coords");
@@ -28,11 +31,33 @@
 			alert("Looks like you have an old browser!");
 		}
 	}
+
+    function addList() {
+        var rows = [];
+        for(let i = 1; i < 6; i++){
+            rows.push("String " + i);
+        }
+        var list = document.createElement("ul");
+        document.getElementById("listArea").appendChild(list);
+        for (var i in rows) {
+            var anchor = document.createElement("p");
+            anchor.innerText = rows[i];
+            var elem = document.createElement("li");
+            elem.appendChild(anchor);
+            list.appendChild(elem);
+        }
+
+    }
   </script>
 </head>
 <body>
 	<img id="map" src="data/map.jpg">
 	<p id="coords">Move mouse over map to find coordinates...</p>
 	<div id="mydiv" style="border:1px solid red">I am a DIV! Click me.</div>
+    <button id="addListbtn">Add list</button>
+    <div id="listArea">
+
+    </div>
+
 </body>
 </html>

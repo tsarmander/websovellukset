@@ -1,0 +1,45 @@
+.otsikko{
+    font-size: 6em;
+    font-family: Arial;
+    padding: 0em;
+    margin: 2%;
+}
+body{
+    text-align: center;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    border: 3px solid blueviolet;
+}
+.kuvateksti{
+    font-weight: bold;
+    font-family: Arial;
+}
+div{
+    height: 100px;
+    width: 30%;
+    margin:auto;
+    border-top: 2px solid black;
+}
+.first{
+    background-color: lightblue;
+}
+.second{
+    background-color: lightgray;
+}
+.third{
+    background-color: lightcoral;
+}
+.big{
+    font-family: Arial;
+    font-size: 2.5em;
+    margin: 0px;
+}
+.small{
+    font-family: Arial;
+    font-style: italic;
+    margin: 0px;
+}

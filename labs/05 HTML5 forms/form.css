@@ -1,0 +1,33 @@
+div{
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    background-color: white;
+    width: 20%;
+    text-align: center;
+    margin-left: 40%;
+    padding: 1%
+}
+body{
+    background-color: darkslategray;
+    text-align: center;
+}
+form{
+    border-radius: 10%;
+}
+fieldset{
+    background-color: #0b77b7;
+}
+legend{
+    font-weight: bold;
+    font-size: 2em;
+}
+h1{
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #0b77b7;
+}
+input{
+    background-color: #0b77b7;
+}
+::placeholder{
+    color: white;
+}

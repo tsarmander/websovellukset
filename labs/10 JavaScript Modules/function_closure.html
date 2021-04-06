@@ -40,13 +40,38 @@ window.onload = function() {
 		count++;
 		div.innerHTML = message + count + " times!";
 	};
+	var speed = 0;
+	var message2 = "Current playback speed: ";
+	var div2 = document.getElementById("playback-speed");
+
+	var minus = document.getElementById("minus");
+	minus.onclick = function() {
+		speed--;
+		div2.innerHTML = message2 + speed;
+	};
+	var plus = document.getElementById("plus");
+	plus.onclick = function() {
+		speed++;
+		div2.innerHTML = message2 + speed;
+	};
+	var reset = document.getElementById("zero");
+	reset.onclick = function() {
+		speed = 0;
+		div2.innerHTML = message2 + speed;
+	};
 };
+
+
 
 </script> 
 </head> 
 <body>
 	<button id="clickme">Click me!</button>
+	<button id="minus">-</button>
+	<button id="plus">+</button>
+	<button id="zero">0</button>
 	<div id="message"></div>
+	<div id="playback-speed"></div>
 </body>
 </html>
 

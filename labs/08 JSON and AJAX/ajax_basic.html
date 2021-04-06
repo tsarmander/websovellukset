@@ -10,14 +10,18 @@
     Make a request
   </span>
 
+  <div>
+      <label for="myURL">Etsi: </label>
+      <input type="url" id="myURL" value="http://">
+      <button id="searchButton">Search</button>
+  </div>
 
   <script type="text/javascript">
-  (function() {
+  (function () {
     var httpRequest;
-    var testUrl = 'data/story.json';
     // Use Github Gist when no web server is available
     // var testUrl = 'https://gist.githubusercontent.com/c0lin/571d38b984d41b44aacf/raw/story.json';
-    document.getElementById("ajaxButton").onclick = function() { makeRequest(testUrl); };
+    document.getElementById("searchButton").onclick = function() { makeRequest(document.getElementById("myURL").value); };
 
     function makeRequest(url) {
       if (window.XMLHttpRequest) { // Mozilla, Safari, ...
@@ -54,7 +58,7 @@
         if (httpRequest.status === 200) {
           alert(httpRequest.responseText);
         } else {
-          alert('There was a problem with the request.');
+          alert('Site is DOWN!');
         }
       }
     }

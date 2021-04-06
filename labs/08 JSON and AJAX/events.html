@@ -16,6 +16,10 @@ window.onload = function() {
 	} else if (div.attachEvent) {
 		div.attachEvent("click", handleClick);
 	}
+
+  let test = document.getElementById("test");
+
+  test.addEventListener("mouseover", handleOver, false);
 };
 
 function handleClick(e) {
@@ -29,9 +33,24 @@ function handleClick(e) {
 	alert("You clicked on " + target.id);
 }
 
+
+function handleOver(e){
+  var evt = e  || window.event;
+  var target;
+  if(evt.target){
+    target = evt.target;
+  }else{
+    target = evt.srcElement;
+  }
+  alert("You hovered over the div" + target.id);
+  e.target.style.color = "orange";
+}
+
+
   </script>
 </head>
 <body>
 <span id="clickme">Click me!</span>
+<div id="test">Here is a div.</div>
 </body>
 </html>

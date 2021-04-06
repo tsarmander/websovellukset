@@ -38,6 +38,13 @@ function addTask() {
     
 } // End of addTask() function.
 
+function removeDuplicateElements(tasks){
+    document.getElementById('theForm').innerHTML=
+        tasks.filter(function(item, pos, self){
+            return self.indexOf(item) == pos;
+        });
+}
+
 // Initial setup:
 function init() {
     'use strict';

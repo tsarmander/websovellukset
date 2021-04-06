@@ -2,11 +2,24 @@
 
 console.log(document);
 
-document.getElementById('save').onclick = save;
 document.querySelector('#userForm input[type="email"]').onkeypress = function() {
 	console.log('updating email');
 	var email = document.querySelector('#userForm input[type="email"]').value;
-	document.querySelector('#summary p').innerHTML = email;
+	document.querySelector('#summary p#p2').innerHTML = email;
+	save();
+};
+
+document.querySelector('#userForm input[type="text"]').onkeypress = function() {
+	console.log('updating name');
+	var name = document.querySelector('#userForm input[type="text"]').value;
+	document.querySelector('#summary h1').innerHTML = name;
+	save();
+};
+document.querySelector('#userForm input[type="password"]').onkeypress = function() {
+	console.log('updating password');
+	var password = document.querySelector('#userForm input[type="password"]').value;
+	document.querySelector('#summary p').innerHTML = password;
+	save();
 };
 
 
