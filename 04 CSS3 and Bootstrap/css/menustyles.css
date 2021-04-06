@@ -1,0 +1,42 @@
+
+
+body {
+    font-family: Arial, Verdana, sans-serif;
+    background-color: darkblue;
+}
+
+nav ul {
+    text-align: center;
+    list-style: none;
+}
+
+nav ul li {
+    float: left;
+    width: 10%;
+    text-align: center;
+}
+
+nav ul li ul {
+    visibility: hidden;
+    position: absolute;
+}
+
+nav ul li ul li {
+    float: none;
+    margin-left: 0px;
+    width: 100%;
+    text-align: center;
+    color:lawngreen;
+}
+
+nav ul li:hover > ul {
+    visibility:visible;
+}
+h1{
+    font-family: Impact;
+    padding-left: 6em;
+    color:lawngreen;
+}
+a{
+    color:lawngreen;
+}

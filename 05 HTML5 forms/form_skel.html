@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--
+	This page demonstrates a form.
+	-->
+	<head>
+		<meta charset="utf-8"/>
+		<title>Demonstrating HTML forms</title>
+		<link href="form.css" rel="stylesheet" />
+	</head>
+	
+	<body>
+		<h1>Turnitin</h1>
+		<form  lang="fi" action="">
+			<div>
+				Name: <input type="text" name="studentname" placeholder="Jaska Jokunen..."/>
+			</div>
+			<div>
+				Student id: <input type="number" name="id" oninvalid="this.setCustomValidity('Vain numerot ovat sallittuja')" placeholder="0123456..." pattern="{7} \d*"/>
+			</div>
+
+			<div>
+				Email: <input type="email" name="email"  oninvalid="this.setCustomValidity('Sähköpostiosoite ei ole oikeassa muodossa')" placeholder="jaska.jokunen@gmail.com..." pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"/>
+			</div>
+
+			<div>
+				Assignment: <input type="text" name="assignment" placeholder="Kirjoita tähän tekstisi..." />
+			</div>
+
+			<div>
+					Code: <input type="number" name="code"  oninvalid="this.setCustomValidity('Vain numerot ovat sallittuja')" placeholder="0391..."/>
+			</div>
+			<div>
+					Cheat: <input type="checkbox" name="cheat"  />
+			</div>
+			<div>
+			<!--
+				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
+			-->
+				<fieldset>
+					<legend>Payment method</legend>
+				<input type="radio" id="visa" name="payment" value="visa">
+				<label for="visa">Visa</label><br>
+				<input type="radio" id="paypal" name="payment" value="paypal">
+				<label for="paypal">Paypal</label><br>
+				<input type="radio" id="mastercard" name="payment" value="mastercard">
+				<label for="mastercard">Mastercard</label>
+				</fieldset>
+			</div>
+			<div>
+
+			<!--
+				Make an input named "score" which is a list of choices for the score 
+			-->
+				<fieldset>
+					<legend>Score of the test</legend>
+				<input type="radio" id="a" name="score" value="a" pattern="[a-zA-Z][a-zA-Z0-9-_.]">
+				<label for="a">26-30p</label><br>
+				<input type="radio" id="b" name="score" value="b" pattern="[a-zA-Z][a-zA-Z0-9-_.]">
+				<label for="b">19-25p</label><br>
+				<input type="radio" id="c" name="score" value="c" pattern="[a-zA-Z][a-zA-Z0-9-_.]">
+				<label for="c">12-18p</label><br>
+				<input type="radio" id="d" name="score" value="d" pattern="[a-zA-Z][a-zA-Z0-9-_.]">
+				<label for="d">6-11p</label><br>
+				<input type="radio" id="e" name="score" value="e" pattern="[a-zA-Z][a-zA-Z0-9-_.]">
+				<label for="e">0-5p</label>
+				</fieldset>
+			</div>
+			<input type="submit" />
+		</form>
+		<a href="http://jigsaw.w3.org/css-validator/check/referer">Validate</a>
+	</body>
+</html>
