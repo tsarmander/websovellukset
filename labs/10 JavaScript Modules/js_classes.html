@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <title>Coffee Constructor</title>
 <script>
-function Tea(type, ounces){
+function Tea(type, ounces, minutes){
     this.type = type;
     this.ounces = ounces;
+    this.minutes = minutes;
     this.getSize = function() {
         if (this.ounces === 8) {
             return "small";
@@ -15,7 +16,36 @@ function Tea(type, ounces){
         } else if (this.ounces === 16) {
             return "large";
         }
+    }
+    this.getSteepTime = function(){
+        if(this.minutes > 10){
+            return "over";
+        }
+        else if(10 > this.minutes > 5){
+            return "normal";
+        }
+        else if (5 > this.minutes){
+            return "under";
+        }
+
     };
+    this.order = function() {
+        var msg;
+        switch (this.getSize()) {
+            case "small":
+            case "medium":
+            case "large":
+                msg = "You've ordered a " + this.getSize() + " " + this.type + " tea " + "with steeptime of " + this.getSteepTime();
+                break;
+            default:
+                msg = "We don't have a " + this.type + " in that size!";
+                break;
+        }
+        return msg;
+    };
+    this.sip = function(){
+        console.log("MMMM TASTY!");
+    }
 }
 function Coffee(roast, ounces) {
 	this.roast = roast;
@@ -43,6 +73,9 @@ function Coffee(roast, ounces) {
 		}
 		return msg;
 	};
+    this.sip = function(){
+        console.log("MMMM TASTY!");
+    }
 }
 
 var coffee = new Coffee("House Blend", 12);
@@ -53,6 +86,11 @@ console.log(darkRoast.order());
 
 var specialBlend = new Coffee("Special Blend", 200);
 console.log(specialBlend.order());
+
+var teaOne = new Tea("Normal", 16, 12);
+console.log(teaOne.order());
+teaOne.sip();
+specialBlend.sip();
 
 </script>
 </head>

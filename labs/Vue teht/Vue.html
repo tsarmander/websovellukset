@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <label>
+    <input v-model="teksti" placeholder="Kirjoita jotain">
+    </label>
+    <p>Kirjoitit: {{ teksti }}</p>
+</div>
+
+<div id="app-3">
+    <span v-if="seen">Now you see me</span>
+    <button v-on:click="Vaihda">Näytä/Piilota</button>
+</div>
+
+<div id="app-5">
+    <p>Luku on {{ luku }}
+    <button v-on:click="plus">+</button>
+    <button v-on:click="minus">-</button>
+    <button v-on:click="reset">0</button>
+</div>
+
+<form action="#" method="post" id="theForm" v-on:submit="addTask">
+    <fieldset><legend>Enter a Task To Be Done</legend>
+        <div><label for="task">Task</label><input v-model="text" name="task" id="task" required></div>
+        <input type="submit" value="Add It!" id="submit">
+        <div id="output">{{output}}</div>
+    </fieldset>
+</form>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            teksti: 'Hello world!'
+        }
+
+    })
+    var app3 = new Vue({
+        el: '#app-3',
+        data:{
+            seen: true
+        },
+        methods: {
+            Vaihda: function () {
+                if(this.seen === true) {
+                    this.seen = false;
+                }
+                else if(this.seen === false){
+                    this.seen = true;
+                }
+            }
+        }
+    })
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            luku: 0
+        },
+        methods:{
+            plus: function(){
+                this.luku = this.luku + 1;
+            },
+            minus: function (){
+                this.luku = this.luku - 1;
+            },
+            reset: function (){
+                this.luku = 0;
+            }
+        }
+
+    })
+
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            input: ''
+        },
+        methods:{
+            addTask: function(){
+                'use strict';
+
+                // Get the task:
+                var task = document.getElementById('task');
+
+                // Reference to where the output goes:
+                var output = document.getElementById('output');
+
+                // For the output:
+                var message = '';
+
+                if (this.task.value) {
+
+                    // Add the item to the array:
+                    tasks.push(task.value);
+
+                    // Update the page:
+                    message = '<h2>To-Do</h2><ol>';
+                    for (var i = 0, count = this.tasks.length; i < count; i++) {
+                        this.message += '<li>' + this.tasks[i] + '</li>';
+                    }
+                    this.message += '</ol>';
+                    this.output.innerHTML = message;
+
+                } // End of task.value IF.
+
+                // Return false to prevent submission:
+                return false;
+
+            }
+            }
+
+    })
+
+</script>
+</body>
+</html>
